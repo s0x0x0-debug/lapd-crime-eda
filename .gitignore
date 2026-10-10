@@ -63,7 +63,8 @@ temp/
 # =========================
 # Raw source data
 # =========================
-data/raw/
+data/raw/*
+!/data/raw/.gitkeep
 
 # =========================
 # Generated local artifacts
