@@ -109,12 +109,21 @@ def get_peak(df, value_column, label_column, valid=None):
     if valid is not None:
         df = df[valid]
 
-    totals = group_counts(df, [value_column, label_column])
+    # Avoid duplicate group columns, e.g. hour/hour.
+    group_columns = list(dict.fromkeys([
+        value_column,
+        label_column,
+    ]))
+
+    totals = group_counts(df, group_columns)
 
     if totals.empty:
         return "N/A"
 
-    return totals.loc[totals["incident_count"].idxmax(), label_column]
+    return totals.loc[
+        totals["incident_count"].idxmax(),
+        label_column,
+    ]
 
 
 def render_bar_chart(df, category, title, horizontal=False):
