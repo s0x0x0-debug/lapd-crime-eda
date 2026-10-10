@@ -115,6 +115,10 @@ def get_peak(df, value_column, label_column, valid=None):
         label_column,
     ]))
 
+    group_columns = list(dict.fromkeys([
+                    value_column,
+                    label_column,
+                    ]))
     totals = group_counts(df, group_columns)
 
     if totals.empty:
