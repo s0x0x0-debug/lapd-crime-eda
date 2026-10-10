@@ -1,0 +1,19 @@
+# Core data analysis
+numpy==2.5.1
+pandas==3.0.5
+
+# Visualisation
+matplotlib==3.11.1
+plotly==6.9.0
+
+# Dashboard
+streamlit==1.59.1
+
+# Parquet
+pyarrow==25.0.0
+
+# Jupyter / notebooks
+jupyter==1.1.1
+ipykernel==7.3.0
+
+# Python version used to develop/test this project: 3.12.13
